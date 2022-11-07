@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SIMPLE TO-DO</title>
+        <meta name="create a to-do list" content="simple to-do list">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+            <header>
+                <h1>TO DO:</h1>
+               <!-- <p> DO YOU KNOW IT'S RECOMMENDED YOU KEEP TASKS LIST SHORT? 5 MAX FOR THE DAY</p> -->
+            </header>
+            <a class="hide button"> Add Item To List</a>
+            <form action="/tasks" method="POST" class="hidden create">
+                    <textarea name="task" required></textarea>
+                    
+                    <!--<input type="date" name="dueDate" id="dueDate"> -->
+                    <input class="button" id="add" type="submit">
+            </form>
+            <section class="list">
+                <ul>
+                  <%for(let i=0; i < tasks.length; i++){ %> 
+                    <li class="listItem">
+                        <input type="checkbox" id="box">
+                        <span class="actualText"><%=tasks[i].task%></span>
+                    </li>
+                    <% } %>
+                </ul>
+            </section>
+            <section class="adjust-list">
+                <a class="button" href="#" id="clearCompleted">Delete Completed</a>
+                <a class="button" href="#" id="clearAll">Delete All</a>
+            </section>
+        
+        <script src="/main.js" async defer></script>
+    </body>
+</html>
